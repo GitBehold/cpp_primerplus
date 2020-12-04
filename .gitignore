@@ -1,0 +1,23 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.d
+
+
+
+
+
+# Debug files
+*.dSYM/
+
+# Directories
+*.vscode
+*.code-workspace
+
+
+#######nordic52832 project ignore files########
+
+#examples/ble_peripheral/ble_app_blinky/pca10040/s132/ses/Output/*
+*.ind
