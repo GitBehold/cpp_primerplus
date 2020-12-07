@@ -26,7 +26,7 @@ public:
     void chanup(Tv & t);//{t.chanup();}
     void chandown(Tv & t);//{t.chandown();}
 
-    void set_chan(Tv &t,int c);//{t.channel = c;}
+    void set_chan(Tv &t,int c);//{t.channel = c;}   //这里声明了set_chan方法,因此后面声明Tv类时,使用set_chan方法就可以顺利通过编译了.
     void set_mode(Tv &t);//{t.set_mode();}
     void set_input(Tv &t);//{t.set_input();}
     ~Remote();
@@ -44,7 +44,7 @@ class Tv
         enum {TV,DVD};
 
         Tv(int s = Off,int mc = 125):state(s),volume(5),maxchannel(mc),channel(2),mode(Cable),input(TV){}
-        void off(){state = (state == On)?Off:On;}
+        void onoff(){state = (state == On)?Off:On;}
         bool ison()const {return state == On;}
 
         bool volup();
@@ -69,7 +69,7 @@ class Tv
 
 inline bool Remote::volup(Tv & t){return t.volup();}
 inline bool Remote::voldown(Tv & t){return t.voldown();}
-inline void Remote::onoff(Tv & t){t.off();}
+inline void Remote::onoff(Tv & t){t.onoff();}
 inline void Remote::chanup(Tv & t){t.chanup();}
 inline void Remote::chandown(Tv & t){t.chandown();}
 
@@ -86,7 +86,7 @@ class Tv{...};
 
 错误的排列方式:
 class Remote;           //不能这么做的原因
-class Tv{...};          //因为Tv类中包含了友元类Remote,因此必须先看到Remote类的声明?? 存疑
+class Tv{...};          //因为Tv类中包含了友元函数Remote::set_chan()方法,因此必须先看到Remote::set_chan()函数的声明?,但是这样的话必须在Remote前先前向声明Tv.
 class Remote{...};
 
 

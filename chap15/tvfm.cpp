@@ -3,6 +3,8 @@
 
 
 
+Tv::~Tv(){}
+Remote::~Remote(){}
 bool Tv::volup()
 {
     if(volume < MaxVal)
@@ -15,7 +17,7 @@ bool Tv::volup()
     }
 }
 
-bool Tv::volup()
+bool Tv::voldown()
 {
     if(volume > MinVal)
     {
@@ -40,7 +42,7 @@ void Tv::chandown()
 {
     if(channel > 1)
     {
-        channel --
+        channel --;
     }else
     {
         channel = maxchannel;
@@ -51,7 +53,7 @@ void Tv::settings() const
 {
     using std::cout;
     using std::endl;
-    cout << "TV is " <<(state == off? "off" : "on") << endl;
+    cout << "TV is " << (state == Off? "off" : "on") << endl;
     if(state == On)
     {
         cout << "Volume setting = " << volume <<endl;

@@ -8,6 +8,7 @@ int main()
     Tv s42;
     cout << "Initial settings for 42 \" TV: \n";
     s42.settings();
+    s42.onoff();
     s42.chanup();
     cout << "\n Adjusted settings for 42 \" TV: \n";
     s42.chanup();
