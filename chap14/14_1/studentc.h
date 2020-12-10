@@ -15,9 +15,9 @@ private:
     std::ostream & arr_out(std::ostream & os) const;
 public:
     Student():name("Null student"),scores(){}
-    explicit Student(const std::string &s)
+    explicit Student(const std::string &s)      //使用explicit关闭隐式转换，因为只带一个参数的构造函数可以隐式转换用作参数类型到类类型的转换
         :name(s),scores(){}
-    explicit Student(int n):name("Nully"),scores(n){}
+    explicit Student(int n):name("Nully"),scores(n){}   //这里同样是使用explicit　防止单参数构造函数的隐式转换．－－－－＞在编译阶段出现错误优于运行阶段出现错误．
     Student(const std::string &s, int n)
         :name(s),scores(n){}
     Student(const std::string &s, const ArrayDb &a)
