@@ -27,8 +27,8 @@ void Worker::Show()const
 
 void Waiter::Set()
 {
-    Worker ::Set();
-    cout << "Enter waiter's panache rating : "
+    Worker ::Set(); //派生类调用基类的方法　，通过类名＋作用域运算符＋方法即可调用．
+    cout << "Enter waiter's panache rating : ";
     cin  >> panache ;
     while (cin.get() != '\n')
     {
@@ -39,7 +39,7 @@ void Waiter::Set()
 void Waiter::Show() const
 {
     cout << "Category : waiter \n";
-    Worker::Show();
+    Worker::Show(); 
     cout << "Panache rating :" << panache << "\n";
 }
 

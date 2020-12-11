@@ -14,7 +14,7 @@ public:
     Worker(const std::string &s,long n)
         :fullname(s),id(n){}
     virtual ~Worker() = 0 ;
-    virtual void Set();
+    virtual void Set(); //纯虚函数声明，证明这个基类是个抽象基类．
     virtual void Show() const;
 };
 
@@ -54,7 +54,6 @@ public:
     void Set();
     void Show() const;
 
-    ~Singer();
 };
 
 
