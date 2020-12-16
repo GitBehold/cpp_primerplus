@@ -1,3 +1,4 @@
+//run : g++ tempmemb.cpp -o temp
 #include <iostream>
 using std::cout;
 using std::endl;
