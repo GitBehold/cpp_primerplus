@@ -76,7 +76,7 @@ public:
             :Worker(wk),Waiter(wk,p),Singer(wk){}
     void Set();
     void Show()const ;
-
+//
 };
 
 
